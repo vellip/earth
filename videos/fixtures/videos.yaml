@@ -1,0 +1,9 @@
+- model: videos.video
+  pk: 1
+  fields:
+    video_id: '194555118'
+
+- model: videos.video
+  pk: 2
+  fields:
+    video_id: '108632712'
