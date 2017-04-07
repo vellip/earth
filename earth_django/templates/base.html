@@ -12,8 +12,10 @@
     </head>
     <body>
         {% block content %}
-            {% block content_wrapped %}
-            {% endblock %}
+            <div class="container">
+                {% block content_wrapped %}
+                {% endblock %}
+            </div>
         {% endblock %}
 
         <script src="{% static 'all.js' %}"></script>
