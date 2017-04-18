@@ -4,3 +4,4 @@ node_modules/
 __pycache__
 /earth_django/static/all.css
 /earth_django/static/all.js
+/earth_django/secret.py
