@@ -1,0 +1,7 @@
+{
+  "printWidth": 80,
+  "jsxSingleQuote": false,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "semi": false
+}
