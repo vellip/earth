@@ -1,6 +1,7 @@
 const { tc } = require('../models/video')
 
 const Query = {
+  videoMany: tc.mongooseResolvers.findMany(),
   videoById: tc.mongooseResolvers.findById(),
   videoOne: tc.mongooseResolvers.findOne(),
   videoCount: tc.mongooseResolvers.count(),
