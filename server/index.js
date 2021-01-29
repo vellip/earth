@@ -4,6 +4,7 @@ const express = require('express')
 const { ApolloServer } = require('apollo-server-express')
 const schema = require('./schema')
 const adminRouter = require('./admin')
+const { getRandom } = require('./models/video')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -22,6 +23,13 @@ Promise.all([app.prepare(), adminRouter])
     })
     apolloServer.applyMiddleware({ app: expressApp })
     expressApp.use('/admin', values[1])
+    expressApp.get('/', async (req, res) => {
+      try {
+        return res.redirect('/' + (await getRandom()).vimeo_id)
+      } catch (e) {
+        console.error(e)
+      }
+    })
     expressApp.get('*', (req, res) => handle(req, res))
 
     expressApp.listen(3000, (err) => {
