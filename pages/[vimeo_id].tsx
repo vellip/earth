@@ -4,6 +4,7 @@ import { graphqlClient } from './_app'
 import { gql } from '@apollo/client'
 import styles from '../styles/Home.module.css'
 import { InferGetStaticPropsType } from 'next'
+import Navigation from '../components/navigation'
 
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
@@ -61,6 +62,7 @@ export default function VideoPage({
 
       <main className={styles.main}>
         <Video video={{ vimeo_id }} />
+        <Navigation />
       </main>
 
       <footer className={styles.footer}></footer>
