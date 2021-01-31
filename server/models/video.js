@@ -1,10 +1,12 @@
 const mongoose = require('mongoose')
 const { composeMongoose } = require('graphql-compose-mongoose')
+const poiSchema = require('./poi')
 
 const schema = new mongoose.Schema({
   title: String,
   vimeo_id: { type: String, required: true, unique: true },
   description: String,
+  pois: [{ type: poiSchema }],
   hidden: { type: Boolean, default: true },
 })
 
